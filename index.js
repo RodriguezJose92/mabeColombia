@@ -1,5 +1,5 @@
 /** Server response */
-let dataServer;
+let dataServerMudi;
 
 async function conectServer(skuNumber){
 
@@ -31,7 +31,7 @@ function createStyles(){
     const link = document.createElement('LINK');
     link.setAttribute('rel','stylesheet');
     link.id="stylesMudiGeneral";
-    link.href=`https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/index.css`; /* Pueden tomarlos de esta ruta */
+    link.href=`https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeMexico@latest/index.css`; /* Pueden tomarlos de esta ruta */
    
     document.head.appendChild(link)
 };
@@ -90,7 +90,7 @@ function createModal(){
 
     /** Init ARExperience */
     modalMudi.querySelector(`#btnVerEnMiEspacioId`).addEventListener('click',()=>{
-        if(window.innerWidth>1000) console.log('se hizo click en AR');
+        if(window.innerWidth>1000) initARDESK();
         else window.open(`${dataServer.URL_AR}`,"_BLANK")
     });
 
@@ -143,6 +143,8 @@ function initARDESK(){
         </div>
 
     `;
+
+    document.body.querySelector('#modalMudi').appendChild(modalMudi)
 };
 
 async function mudiExperience({skuNumber,fatherContainer}){
@@ -158,22 +160,11 @@ async function mudiExperience({skuNumber,fatherContainer}){
 
     createStyles();
     createButon( fatherContainer );
-
-    dataLayer.push({
-        event: "visualizacionMudi",
-        valorMudi: "1"
-    });  
     
 }
 
-const element = new URLSearchParams(window.location.search).get('mudiTest');
-
-if(element=="true"){
-    window.location.search
-    mudiExperience({
-        skuNumber:"WEM7643CSIS0_MabeMex",
-        fatherContainer: document.body.querySelector(`.owl-wrapper-outer`)
-    })
-}
-
+mudiExperience({
+    skuNumber:"WEM7643CSIS0_MabeMex",
+    fatherContainer: document.body.querySelector(`.image-gallery`)
+})
 
