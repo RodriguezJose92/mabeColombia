@@ -1,14 +1,3 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.owl-wrapper-outer {
-    margin-top: 150px;
-    position: relative;
-}
-
 .ContainerBtnsMudi {
     width: max-content;
     display: flex;
