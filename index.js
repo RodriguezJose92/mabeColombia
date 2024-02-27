@@ -158,6 +158,11 @@ async function mudiExperience({skuNumber,fatherContainer}){
 
     createStyles();
     createButon( fatherContainer );
+
+    dataLayer.push({
+        event: "visualizacionMudi",
+        valorMudi: "1"
+    });  
     
 }
 
