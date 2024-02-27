@@ -97,6 +97,30 @@ body {
     right: 2%;
 }
 
+.containerQRMudi {
+    position: absolute;
+    top: 46px;
+    transform: scale(0.8);
+    right: -3px;
+    display: flex;
+    flex-direction: column;
+    background-color: #007297;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    z-index: 0;
+    color: white;
+}
+
+.mudiQR {
+    width: 250px;
+    padding: 30px;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
 
 @media screen and (max-width:500px) {
     .iframeMudi3D {

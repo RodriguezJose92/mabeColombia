@@ -99,6 +99,12 @@ function createModal(){
 };
 
 function initARDESK(){
+
+    if(document.body.querySelector('#containerQR')) {
+        document.body.querySelector('#containerQR').remove();
+        return
+    };
+
     const 
     modalMudi = document.createElement('DIV');
     modalMudi.id=`containerQR`;
@@ -106,45 +112,45 @@ function initARDESK(){
     modalMudi.innerHTML=`
         <img class="mudiQR" src="${dataServer.URL_QR}" >
 
-        <div>
-            <div>
+        <div class="containerText">
+            <div class="titleContainer">
                 <h4>ESCANÉAME PARA <br><b>VER EN TU ESPACIO</b></h4>
-                <hr>
+                <hr class="hrTitle">
             </div>
 
-            <div>
-                <div>
+            <div class="titleContainer">
+                <div class="iconTitle">
                     <img src="">
                 </div>
-                <p>Apunta el teléfono al piso.</p>
+                <p class="textInfoMudi">Apunta el teléfono al piso.</p>
             </div>
 
-            <div>
-                <div>
+            <div class="titleContainer">
+                <div class="iconTitle">
                     <img src="">
                 </div>
-                <p>Desplaza para visualizar.</p>
+                <p class="textInfoMudi">Desplaza para visualizar.</p>
             </div>
 
-            <div>
-                <div>
+            <div class="titleContainer">
+                <div class="iconTitle">
                     <img src="">
                 </div>
-                <p>Amplia y detalla el producto.</p>
+                <p class="textInfoMudi">Amplia y detalla el producto.</p>
             </div>
 
-            <div>
-                <div>
+            <div class="titleContainer">
+                <div class="iconTitle">
                     <img src="">
                 </div>
-                <p>Toca dos veces para restablecer.</p>
+                <p class="textInfoMudi">Toca dos veces para restablecer.</p>
             </div>
 
         </div>
 
     `;
 
-    document.body.querySelector('#modalMudi').appendChild(modalMudi)
+    document.body.querySelector('.iframeMudi3D').appendChild(modalMudi)
 };
 
 async function mudiExperience({skuNumber,fatherContainer}){
