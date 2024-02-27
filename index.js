@@ -31,7 +31,7 @@ function createStyles(){
     const link = document.createElement('LINK');
     link.setAttribute('rel','stylesheet');
     link.id="stylesMudiGeneral";
-    link.href=`https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeMexico@latest/index.css`; /* Pueden tomarlos de esta ruta */
+    link.href=`https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/index.css`; /* Pueden tomarlos de esta ruta */
    
     document.head.appendChild(link)
 };
