@@ -121,28 +121,28 @@ function initARDESK(){
 
             <div class="titleContainer">
                 <div class="iconTitle">
-                    <img src="">
+                    <img class="stepMudi step1" src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/step1Mabe.webp">
                 </div>
                 <p class="textInfoMudi">Apunta el teléfono al piso.</p>
             </div>
 
             <div class="titleContainer">
                 <div class="iconTitle">
-                    <img src="">
+                    <img class="stepMudi step2" src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/step2Mabe.webp">
                 </div>
                 <p class="textInfoMudi">Desplaza para visualizar.</p>
             </div>
 
             <div class="titleContainer">
                 <div class="iconTitle">
-                    <img src="">
+                    <img class="stepMudi step3" src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/step3Mabe.webp">
                 </div>
                 <p class="textInfoMudi">Amplia y detalla el producto.</p>
             </div>
 
             <div class="titleContainer">
                 <div class="iconTitle">
-                    <img src="">
+                    <img class="stepMudi step4" src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/step4Mabe.webp">
                 </div>
                 <p class="textInfoMudi">Toca dos veces para restablecer.</p>
             </div>
