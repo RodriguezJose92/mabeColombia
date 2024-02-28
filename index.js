@@ -49,7 +49,7 @@ function createButon(father){
         tooltip     = document.createElement('P');
         tooltip.id  = `tooltipMudi` ;
         tooltip.classList.add(`mudiTooltip`);
-        tooltip.innerHTML=`<p class="paragraphMudi"><b class="newMudi">¡Nuevo!</b><br> Descubre como se ve este producto en <b>3D y en tu espacio </b></p>`;
+        tooltip.innerHTML=`<p class="paragraphMudi"><b class="newMudi">¡Nuevo!</b> Descubre como se ve este producto en <b>3D y realidad aumentada</b> en tu espacio</p>`;
     
         /** The 3D botton is an image */
         const 
