@@ -171,6 +171,6 @@ async function mudiExperience({skuNumber,fatherContainer}){
 const verify = new URLSearchParams(window.location.search).get('muditest')
 
 verify && mudiExperience({
-    skuNumber:"WEM7643CSIS0_MabeMex",
+    skuNumber:document.body.querySelector('.code').innerHTML,
     fatherContainer: document.body.querySelectorAll(`.image-gallery`)
 });
