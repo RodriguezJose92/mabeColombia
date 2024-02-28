@@ -1,10 +1,3 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
 .ContainerBtnsMudi {
     width: max-content;
     display: flex;
@@ -26,7 +19,7 @@ body {
 
 .mudiTooltip {
     position: absolute;
-    top: -60%;
+    top: -70%;
     right: -60%;
     width: 351px;
     text-align: center;
@@ -36,6 +29,19 @@ body {
     margin: 0;
     color: white;
     transform: scale(0.8);
+
+}
+
+.mudiTooltip::after {
+    content: '_';
+    font-size: 10px;
+    position: absolute;
+    background-color: #ff820b;
+    color: #ff820b;
+    width: 12px;
+    bottom: -11px;
+    right: 15%;
+    border-bottom-right-radius: 20px;
 }
 
 .paragraphMudi {
@@ -129,6 +135,7 @@ body {
 
     .btnMudiAR {
         position: absolute;
+        top: 5%;
         bottom: 0% !important;
         width: 40%;
     }
