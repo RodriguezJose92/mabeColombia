@@ -64,7 +64,8 @@ function createButon(father){
     container.appendChild(button3D);
 
     /** Add container to DOM */
-    father.appendChild(container);
+    if(window.innerWidth>1000)father[0].appendChild(container);
+    else  father[1].appendChild(container);
 
 };
 
@@ -165,12 +166,11 @@ async function mudiExperience({skuNumber,fatherContainer}){
     };
 
     createStyles();
-    createButon( fatherContainer );
-    
-}
+    createButon( fatherContainer ); 
+};
 
 mudiExperience({
     skuNumber:"WEM7643CSIS0_MabeMex",
-    fatherContainer: document.body.querySelector(`.image-gallery`)
+    fatherContainer: document.body.querySelectorAll(`.image-gallery`)
 })
 
