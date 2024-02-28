@@ -172,9 +172,7 @@ async function mudiExperience({skuNumber,fatherContainer}){
     });  
 };
 
-const verify = new URLSearchParams(window.location.search).get('muditest')
-
-verify && mudiExperience({
+mudiExperience({
     skuNumber:document.body.querySelector('.code').innerHTML,
     fatherContainer: document.body.querySelectorAll(`.image-gallery`)
 });
