@@ -158,7 +158,6 @@ async function mudiExperience({skuNumber,fatherContainer}){
 
     const 
     dataServer = await conectServer(skuNumber);
-    console.log(dataServer)
     
     if(!dataServer){
         console.warn(`El SKU ${skuNumber} No posee experiencias de 3D y realidad aumentada`)
@@ -173,4 +172,3 @@ mudiExperience({
     skuNumber:"WEM7643CSIS0_MabeMex",
     fatherContainer: document.body.querySelectorAll(`.image-gallery`)
 })
-
