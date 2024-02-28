@@ -55,7 +55,7 @@ function createButon(father){
         const 
         button3D    = document.createElement('IMG');
         button3D.id = `btn3DProdId`;
-        button3D.src= `https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeMexico@latest/btn3D.png`;
+        button3D.src= `https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/btn3D.png`;
         button3D.classList.add(`btnMudi3D`);
         button3D.addEventListener('click',createModal,false)
 
@@ -80,7 +80,7 @@ function createModal(){
         <div class="iframeMudi3D">
             <button class="closeModalMudi">X</button>
             <iframe class="modelMudi" src="${dataServer.URL_WEB}"></iframe>
-            <img id='btnVerEnMiEspacioId' class="btnMudiAR" src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeMexico@latest/btnAR.png"/>
+            <img id='btnVerEnMiEspacioId' class="btnMudiAR" src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/btnAR.png"/>
         </div>
     `;
 
@@ -168,7 +168,9 @@ async function mudiExperience({skuNumber,fatherContainer}){
     createButon( fatherContainer ); 
 };
 
-mudiExperience({
+const verify = new URLSearchParams(window.location.search).get('mudiTest')
+
+verify && mudiExperience({
     skuNumber:"WEM7643CSIS0_MabeMex",
     fatherContainer: document.body.querySelectorAll(`.image-gallery`)
-})
+});
