@@ -1,3 +1,10 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .ContainerBtnsMudi {
     width: max-content;
     display: flex;
@@ -127,6 +134,40 @@
     border-radius: 20px;
 }
 
+.containerText {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stepMudi {
+    width: 35px;
+}
+
+.titleContainer {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.titleContainer:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.hrTitle {
+    margin: 2px auto 10px auto;
+    border: none;
+    outline: none;
+    height: 2px;
+    width: 90%;
+    background-color: white;
+}
 
 @media screen and (max-width:500px) {
     .iframeMudi3D {
