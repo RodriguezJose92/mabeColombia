@@ -14,7 +14,7 @@ async function conectServer(skuNumber){
         request = await fetch('https://mudiview.mudi.com.co:7443/product/getProductsUrl',{
             method:'POST',
             headers:{   "Content-type":"application/json",
-                        "tokenapi":"QAP9p4Hiq7A9WR5z6Rmu"
+                        "tokenapi":"M5uS9qsjJdaY7kLmhABR"
             },
             body: JSON.stringify(myBody)
         })
@@ -36,7 +36,7 @@ function createStyles(){
     document.head.appendChild(link)
 };
 
-function createButon(father){
+function createButon(father,skuNumber){
 
     /** We create a container for the 3D button */
     const 
@@ -54,10 +54,10 @@ function createButon(father){
         /** The 3D botton is an image */
         const 
         button3D    = document.createElement('IMG');
-        button3D.id = `btn3DProdId`;
+        button3D.id = `btnMudi3D`;
         button3D.src= `https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/btn3D.png`;
         button3D.classList.add(`btnMudi3D`);
-        button3D.addEventListener('click',createModal,false)
+        button3D.addEventListener('click',()=>{createModal(skuNumber)},false)
 
     /** Add tooltip and 3D buttton to "container" */
     container.appendChild(tooltip);
@@ -69,7 +69,7 @@ function createButon(father){
 
 };
 
-function createModal(){
+function createModal(skuNumber){
 
     /** We create a shell for the MUDI modal */
     const 
@@ -80,9 +80,15 @@ function createModal(){
         <div class="iframeMudi3D">
             <button class="closeModalMudi">X</button>
             <iframe class="modelMudi" src="${dataServer.URL_WEB}"></iframe>
-            <img id='btnVerEnMiEspacioId' class="btnMudiAR" src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/btnAR.png"/>
+            <div class="containerBtnsActions">
+                <img id='btnMudiAR' class="btnMudiAR" src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/AROn.png"/>
+            </div>
         </div>
     `;
+    
+        /** Verificamos si el producto es un aire acondicionado y añadimos la unidad externa  */
+        ( skuNumber.includes('MMT') || skuNumber.includes('MMI') )
+        &&  modalMudi.querySelector('.containerBtnsActions').appendChild(addExternalDrive(skuNumber))  
 
     /** We close the MUDI modal*/
     modalMudi.querySelector(`.closeModalMudi`).addEventListener('click',()=>{
@@ -90,7 +96,7 @@ function createModal(){
     });
 
     /** Init ARExperience */
-    modalMudi.querySelector(`#btnVerEnMiEspacioId`).addEventListener('click',()=>{
+    modalMudi.querySelector(`#btnMudiAR`).addEventListener('click',()=>{
         if(window.innerWidth>1000) initARDESK();
         else window.open(`${dataServer.URL_AR}`,"_BLANK")
     });
@@ -99,9 +105,48 @@ function createModal(){
 
 };
 
+function addExternalDrive (skuNumber){
+    
+    /** Model 3d model3D */
+    let model3D, urlExternalDrive;
+
+    /** Verificamos que unidad externa es */
+    skuNumber.includes('MMT') 
+    ? urlExternalDrive = "https://viewer.mudi.com.co/v1/web/?id=105&sku=UE_Azul" 
+    : urlExternalDrive ="https://viewer.mudi.com.co/v1/web/?id=105&sku=UE_Dorada";
+
+    /** Buttones */
+    const 
+    button = document.createElement('IMG');
+    button.classList.add('external_drive');
+    button.id="externalDrive";
+    button.src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/btn3DOn.png"
+
+    /** Añadimos la funcionalidad */
+    button.addEventListener('click',()=>{
+        
+        !model3D 
+        ? (
+            document.body.querySelector('.modelMudi').src=urlExternalDrive,
+            button.src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/btn3DOff.png"
+          ) 
+        : (
+            document.body.querySelector('.modelMudi').src=dataServer.URL_WEB,
+            button.src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/btn3DOn.png"
+           );
+
+        model3D = !model3D;
+    });
+
+    return button;
+}
+
 function initARDESK(){
 
+    document.body.querySelector('#btnMudiAR').src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/AROff.png";
+
     if(document.body.querySelector('#containerQR')) {
+        document.body.querySelector('#btnMudiAR').src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/AROn.png"
         document.body.querySelector('#containerQR').remove();
         return
     };
@@ -165,7 +210,7 @@ async function mudiExperience({skuNumber,fatherContainer}){
     };
 
     createStyles();
-    createButon( fatherContainer ); 
+    createButon( fatherContainer , skuNumber); 
     dataLayer.push({
         event: "visualizacionMudi",
         valorMudi: "1"
