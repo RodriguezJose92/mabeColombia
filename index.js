@@ -14,7 +14,7 @@ async function conectServer(skuNumber){
         request = await fetch('https://mudiview.mudi.com.co:7443/product/getProductsUrl',{
             method:'POST',
             headers:{   "Content-type":"application/json",
-                        "tokenapi":"M5uS9qsjJdaY7kLmhABR"
+                        "tokenapi":"QAP9p4Hiq7A9WR5z6Rmu"
             },
             body: JSON.stringify(myBody)
         })
