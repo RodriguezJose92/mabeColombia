@@ -96,7 +96,7 @@ function createModal(skuNumber){
     });
 
     /** Init ARExperience */
-    modalMudi.querySelector(`#btnMudiAR`).addEventListener('click',()=>{
+    modalMudi.querySelector(`#btnVerEnMiEspacioId`).addEventListener('click',()=>{
         if(window.innerWidth>1000) initARDESK();
         else window.open(`${dataServer.URL_AR}`,"_BLANK")
     });
@@ -143,10 +143,10 @@ function addExternalDrive (skuNumber){
 
 function initARDESK(){
 
-    document.body.querySelector('#btnMudiAR').src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/AROff.png";
+    document.body.querySelector('#btnVerEnMiEspacioId').src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/AROff.png";
 
     if(document.body.querySelector('#containerQR')) {
-        document.body.querySelector('#btnMudiAR').src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/AROn.png"
+        document.body.querySelector('#btnVerEnMiEspacioId').src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/AROn.png"
         document.body.querySelector('#containerQR').remove();
         return
     };
