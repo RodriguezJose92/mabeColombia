@@ -54,7 +54,7 @@ function createButon(father,skuNumber){
         /** The 3D botton is an image */
         const 
         button3D    = document.createElement('IMG');
-        button3D.id = `btnMudi3D`;
+        button3D.id = `btn3DProdId`;
         button3D.src= `https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/btn3D.png`;
         button3D.classList.add(`btnMudi3D`);
         button3D.addEventListener('click',()=>{createModal(skuNumber)},false)
@@ -81,7 +81,7 @@ function createModal(skuNumber){
             <button class="closeModalMudi">X</button>
             <iframe class="modelMudi" src="${dataServer.URL_WEB}"></iframe>
             <div class="containerBtnsActions">
-                <img id='btnMudiAR' class="btnMudiAR" src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/AROn.png"/>
+                <img id='btnVerEnMiEspacioId' class="btnMudiAR" src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/AROn.png"/>
             </div>
         </div>
     `;
@@ -118,7 +118,7 @@ function addExternalDrive (skuNumber){
     /** Buttones */
     const 
     button = document.createElement('IMG');
-    button.classList.add('external_drive');
+    button.classList.add('btn3DAires');
     button.id="externalDrive";
     button.src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/btn3DOn.png"
 
@@ -139,7 +139,7 @@ function addExternalDrive (skuNumber){
     });
 
     return button;
-}
+};
 
 function initARDESK(){
 
@@ -218,6 +218,6 @@ async function mudiExperience({skuNumber,fatherContainer}){
 };
 
 mudiExperience({
-    skuNumber:document.body.querySelector('.code').innerHTML,
-    fatherContainer: document.body.querySelectorAll(`.image-gallery`)
+    skuNumber:          document.body.querySelector('.code').innerHTML,
+    fatherContainer:    document.body.querySelectorAll(`.image-gallery`)
 });
