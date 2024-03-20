@@ -120,7 +120,7 @@
     position: absolute;
     bottom: 0;
     transform: scale(0.8);
-    rigth: -11px;
+    right: -11px;
     display: flex;
     flex-direction: column;
     background-color: #007297;
@@ -183,7 +183,7 @@
         position: absolute;
         bottom: 0;
         transform: scale(0.7);
-        rigth: -10px;
+        right: -10px;
         display: flex;
         flex-direction: column;
         background-color: #007297;
@@ -202,7 +202,7 @@
         position: absolute;
         bottom: 0;
         transform: scale(0.6);
-        rigth: -10px;
+        right: -10px;
         display: flex;
         flex-direction: column;
         background-color: #007297;
