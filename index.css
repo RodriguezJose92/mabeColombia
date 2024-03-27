@@ -8,6 +8,15 @@
     right: 0;
 }
 
+.animate-Shaking {
+    animation-name: shaking;
+    animation-duration: 9s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards
+}
+
+
 .btnMudi3D {
     width: 80px !important;
     cursor: pointer;
@@ -239,4 +248,44 @@
     .btn3DAires {
         width: 100%;
     }
+}
+
+@keyframes shaking {
+    0% {
+        transform: scale(1);
+    }
+
+    12.5% {
+        transform: scale(1.1);
+    }
+
+    25% {
+        transform: scale(1);
+    }
+
+    37.5% {
+        transform: scale(.9);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    62.5% {
+        transform: scale(1.1);
+    }
+
+    75% {
+        transform: scale(1);
+    }
+
+    87.5% {
+        transform: scale(.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+
 }

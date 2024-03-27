@@ -56,6 +56,7 @@ function createButon(father,skuNumber){
         button3D    = document.createElement('IMG');
         button3D.id = `btn3DProdId`;
         button3D.src= `https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/btn3D.png`;
+        button3D.classList.add(`animate-Shaking`);
         button3D.classList.add(`btnMudi3D`);
         button3D.addEventListener('click',()=>{createModal(skuNumber)},false)
 
