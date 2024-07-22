@@ -17,7 +17,7 @@
 }
 
 
-.btnMudi3D {
+#btn3DProdId {
     width: 80px;
     cursor: pointer;
     -webkit-box-shadow: 10px 10px 33px -18px rgba(0, 0, 0, 0.58);
@@ -253,7 +253,7 @@
         width: 100%;
     }
 
-    .btnMudi3D{
+    #btn3DProdId{
         width:60px
     }
 }
