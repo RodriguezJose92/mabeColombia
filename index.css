@@ -18,7 +18,7 @@
 
 
 .btnMudi3D {
-    width: 80px !important;
+    width: 80px;
     cursor: pointer;
     -webkit-box-shadow: 10px 10px 33px -18px rgba(0, 0, 0, 0.58);
     -moz-box-shadow: 10px 10px 33px -18px rgba(0, 0, 0, 0.58);
@@ -229,6 +229,10 @@
         width: 90%;
     }
 
+    .ContainerBtnsMudi{
+        top:0
+    }
+
     .containerBtnsActions {
         position: absolute;
         width: 40%;
@@ -247,6 +251,10 @@
 
     .btn3DAires {
         width: 100%;
+    }
+
+    .btnMudi3D{
+        width:60px
     }
 }
 
