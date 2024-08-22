@@ -184,6 +184,11 @@
     background-color: white;
 }
 
+.detailInfoSize {
+    transition: all ease-in-out .2s;
+    width: 80%;
+    opacity: 0;
+  }
 
 
 @media screen and (min-width:1400px) and (max-width:1699px) {
