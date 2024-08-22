@@ -1,5 +1,5 @@
 /** Server response */
-let dataServerMudi;
+
 
 async function conectServer(skuNumber){
 
@@ -20,7 +20,8 @@ async function conectServer(skuNumber){
         })
         const 
         response = await request.json();
-        dataServer=response.data[0];   
+        dataServer=response.data[0]; 
+        console.log(response.data[0])  
 
     } catch (error) {console.error(`Mudi Error:\n${error}`)}
     
@@ -88,8 +89,18 @@ function createModal(skuNumber){
     `;
     
         /** Verificamos si el producto es un aire acondicionado y añadimos la unidad externa  */
-        ( skuNumber.includes('MMT') || skuNumber.includes('MMI') )
-        &&  modalMudi.querySelector('.containerBtnsActions').appendChild(addExternalDrive(skuNumber))  
+    ( skuNumber.includes('MMT') || skuNumber.includes('MMI') )
+    &&  modalMudi.querySelector('.containerBtnsActions').appendChild(addExternalDrive(skuNumber))  
+
+    /** AGREGAR MEDIDAS INSTALACIÓN */
+    if(skuNumber.includes('PM') ){
+        
+        const p = document.createElement('P');
+        p.classList.add('instalationSize');
+        p.innerHTML=`Medidas de intalación: Ancho: 55.7cm Largo: 47.7cm`;
+
+        modalMudi.querySelector('.iframeMudi3D').appendChild(p);
+    }
 
     /** We close the MUDI modal*/
     modalMudi.querySelector(`.closeModalMudi`).addEventListener('click',()=>{
