@@ -150,15 +150,14 @@ function addExternalDrive (skuNumber){
 
 function addSize(skuNumber) {
     const sizeInfo = document.createElement('DIV');
+    sizeInfo.classList.add('sizeInfoText');  // Añadimos una clase para el estilo
 
     if (skuNumber.includes('PM')) {
         sizeInfo.innerText = "Medidas de instalación: Ancho: 55.7cm Largo: 47.7cm"; 
-    } else {
-        sizeInfo.innerText = "";
     }
 
     return sizeInfo;
-}
+};
 
 function initARDESK(){
 
