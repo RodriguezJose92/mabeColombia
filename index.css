@@ -184,22 +184,6 @@
     background-color: white;
 }
 
-.detailInfoSize {
-    transition: all ease-in-out .2s;
-    width: 80%;
-    opacity: 0;
-  }
-
-.sizeInfoText {
-    text-align: center;
-    color: blue;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 16px;
-    font-weight: bold;
-}
 
 
 @media screen and (min-width:1400px) and (max-width:1699px) {
