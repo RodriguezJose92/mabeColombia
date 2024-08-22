@@ -91,6 +91,10 @@ function createModal(skuNumber){
         ( skuNumber.includes('MMT') || skuNumber.includes('MMI') )
         &&  modalMudi.querySelector('.containerBtnsActions').appendChild(addExternalDrive(skuNumber))  
 
+        /** Verificamos si el producto es una cubierta y añadimos la unidad externa  */
+        (skuNumber.includes('PM')) &&
+         modalMudi.querySelector('.detailInfoSize').appendChild(addSize(skuNumber));
+
     /** We close the MUDI modal*/
     modalMudi.querySelector(`.closeModalMudi`).addEventListener('click',()=>{
         document.body.querySelector('#modalMudi').remove();
@@ -142,6 +146,17 @@ function addExternalDrive (skuNumber){
     return button;
 };
 
+function addSize(skuNumber) {
+    const sizeInfo = document.createElement('DIV');
+
+    if (skuNumber.includes('PM')) {
+        sizeInfo.innerText = "Medidas de intalación: Ancho: 55.7cm Largo:47.7cm "; 
+    } else {
+        sizeInfo.innerText = "";
+    }
+
+    return sizeInfo;
+}
 function initARDESK(){
 
     document.body.querySelector('#btnVerEnMiEspacioId').src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/AROff.png";
