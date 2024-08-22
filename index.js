@@ -20,11 +20,11 @@ async function conectServer(skuNumber){
         })
         const 
         response = await request.json();
-        dataServer=response.data[0];   
+        dataServerMudi = response.data[0];   
 
     } catch (error) {console.error(`Mudi Error:\n${error}`)}
     
-    return dataServer;
+    return dataServerMudi;
 };
 
 function createStyles(){
@@ -80,20 +80,23 @@ function createModal(skuNumber){
     modalMudi.innerHTML=`
         <div class="iframeMudi3D">
             <button class="closeModalMudi">X</button>
-            <iframe class="modelMudi" src="${dataServer.URL_WEB}"></iframe>
+            <iframe class="modelMudi" src="${dataServerMudi.URL_WEB}"></iframe>
             <div class="containerBtnsActions">
                 <img id='btnVerEnMiEspacioId' class="btnMudiAR" src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/AROn2.png"/>
             </div>
         </div>
     `;
     
-        /** Verificamos si el producto es un aire acondicionado y añadimos la unidad externa  */
-        ( skuNumber.includes('MMT') || skuNumber.includes('MMI') )
-        &&  modalMudi.querySelector('.containerBtnsActions').appendChild(addExternalDrive(skuNumber))  
+    /** Verificamos si el producto es un aire acondicionado y añadimos la unidad externa  */
+    if (skuNumber.includes('MMT') || skuNumber.includes('MMI')) {
+        modalMudi.querySelector('.containerBtnsActions').appendChild(addExternalDrive(skuNumber));
+    }
 
-        /** Verificamos si el producto es una cubierta y añadimos la unidad externa  */
-        (skuNumber.includes('PM')) &&
-         modalMudi.querySelector('.detailInfoSize').appendChild(addSize(skuNumber));
+    /** Verificamos si el producto es una cubierta y añadimos la información de tamaño */
+    if (skuNumber.includes('PM')) {
+        const sizeInfo = addSize(skuNumber);
+        modalMudi.querySelector('.iframeMudi3D').appendChild(sizeInfo);
+    }
 
     /** We close the MUDI modal*/
     modalMudi.querySelector(`.closeModalMudi`).addEventListener('click',()=>{
@@ -103,11 +106,10 @@ function createModal(skuNumber){
     /** Init ARExperience */
     modalMudi.querySelector(`#btnVerEnMiEspacioId`).addEventListener('click',()=>{
         if(window.innerWidth>1000) initARDESK();
-        else window.open(`${dataServer.URL_AR}`,"_BLANK")
+        else window.open(`${dataServerMudi.URL_AR}`,"_BLANK")
     });
 
-    document.body.appendChild(modalMudi)
-
+    document.body.appendChild(modalMudi);
 };
 
 function addExternalDrive (skuNumber){
@@ -136,7 +138,7 @@ function addExternalDrive (skuNumber){
             button.src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/btn3DOff.png"
           ) 
         : (
-            document.body.querySelector('.modelMudi').src=dataServer.URL_WEB,
+            document.body.querySelector('.modelMudi').src=dataServerMudi.URL_WEB,
             button.src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/btn3DOn.png"
            );
 
@@ -150,13 +152,14 @@ function addSize(skuNumber) {
     const sizeInfo = document.createElement('DIV');
 
     if (skuNumber.includes('PM')) {
-        sizeInfo.innerText = "Medidas de intalación: Ancho: 55.7cm Largo:47.7cm "; 
+        sizeInfo.innerText = "Medidas de instalación: Ancho: 55.7cm Largo: 47.7cm"; 
     } else {
         sizeInfo.innerText = "";
     }
 
     return sizeInfo;
 }
+
 function initARDESK(){
 
     document.body.querySelector('#btnVerEnMiEspacioId').src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/AROff.png";
@@ -172,7 +175,7 @@ function initARDESK(){
     modalMudi.id=`containerQR`;
     modalMudi.classList.add(`containerQRMudi`);
     modalMudi.innerHTML=`
-        <img class="mudiQR" src="${dataServer.URL_QR}" >
+        <img class="mudiQR" src="${dataServerMudi.URL_QR}" >
 
         <div class="containerText">
             <div class="titleContainer">
@@ -198,7 +201,7 @@ function initARDESK(){
                 <div class="iconTitle">
                     <img class="stepMudi step3" src="https://cdn.jsdelivr.net/gh/RodriguezJose92/mabeColombia@latest/assets/step3Mabe.webp">
                 </div>
-                <p class="textInfoMudi">Amplia y detalla el producto.</p>
+                <p class="textInfoMudi">Amplía y detalla el producto.</p>
             </div>
 
             <div class="titleContainer">
@@ -218,22 +221,11 @@ function initARDESK(){
 async function mudiExperience({skuNumber,fatherContainer}){
 
     const 
-    dataServer = await conectServer(skuNumber);
-    
-    if(!dataServer){
-        console.warn(`El SKU ${skuNumber} No posee experiencias de 3D y realidad aumentada`)
-        return;
-    };
+    dataServerMudi = await conectServer(skuNumber);
+
+    if(!dataServerMudi.URL_WEB)return;
 
     createStyles();
-    createButon( fatherContainer , skuNumber); 
-    dataLayer.push({
-        event: "visualizacionMudi",
-        valorMudi: "1"
-    });  
+    createButon(fatherContainer,skuNumber);
+    
 };
-
-mudiExperience({
-    skuNumber:          document.body.querySelector('.code').innerHTML,
-    fatherContainer:    document.body.querySelectorAll(`.image-gallery`)
-});
