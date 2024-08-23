@@ -93,23 +93,27 @@ function createModal(skuNumber){
     &&  modalMudi.querySelector('.containerBtnsActions').appendChild(addExternalDrive(skuNumber))  
 
     /** AGREGAR MEDIDAS INSTALACIÓN */
+    setTimeout(() => {
+    /** AGREGAR MEDIDAS INSTALACIÓN */
     if (skuNumber.includes('PM')) {
-    const p = document.createElement('P');
-    p.classList.add('instalationSize');
-    p.innerHTML = `Medidas de instalación: Ancho: 55.7cm Largo: 47.7cm`;
-    modalMudi.querySelector('.iframeMudi3D').appendChild(p);
-     } else if (skuNumber.includes('CMG6054FA-0CON')) {
-    const p = document.createElement('P');
-    p.classList.add('instalationSize');
-    p.innerHTML = `Medidas de instalación: Ancho: 56.8cm Largo: 41.8cm`;
-    modalMudi.querySelector('.iframeMudi3D').appendChild(p);
+        const p = document.createElement('P');
+        p.classList.add('instalationSize');
+        p.innerHTML = `Medidas de instalación: Ancho: 55.7cm Largo: 47.7cm`;
+        modalMudi.querySelector('.iframeMudi3D').appendChild(p);
+    } else if (skuNumber.includes('CMG6054FA-0CON')) {
+        const p = document.createElement('P');
+        p.classList.add('instalationSize');
+        p.innerHTML = `Medidas de instalación: Ancho: 56.8cm Largo: 41.8cm`;
+        modalMudi.querySelector('.iframeMudi3D').appendChild(p);
     } else if (skuNumber.includes('CMG6054LA-0CON')) {
-    const p = document.createElement('P');
-    p.classList.add('instalationSize');
-    p.innerHTML = `Medidas de instalación: Ancho: 55.7cm Largo: 55.7cm`;
-    modalMudi.querySelector('.iframeMudi3D').appendChild(p);
+        const p = document.createElement('P');
+        p.classList.add('instalationSize');
+        p.innerHTML = `Medidas de instalación: Ancho: 55.7cm Largo: 55.7cm`;
+        modalMudi.querySelector('.iframeMudi3D').appendChild(p);
     }
+        }, 4000);
 
+    
     /** We close the MUDI modal*/
     modalMudi.querySelector(`.closeModalMudi`).addEventListener('click',()=>{
         document.body.querySelector('#modalMudi').remove();
