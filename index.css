@@ -184,6 +184,20 @@
     background-color: white;
 }
 
+.instalationSize {
+    color: white;
+    bottom: 70px;
+    left: 37%;
+    position: fixed;
+    background: #007297;
+    border-radius: inherit;
+    width: 25%;
+    height: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+
 
 
 @media screen and (min-width:1400px) and (max-width:1699px) {
