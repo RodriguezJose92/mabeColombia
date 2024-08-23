@@ -217,7 +217,22 @@
         z-index: 0;
         color: white;
     }
+
+    .instalationSize {
+    color: white;
+    bottom: 70px;
+    left: 37%;
+    position: fixed;
+    background: #007297;
+    border-radius: inherit;
+    width: 27%;
+    height: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    }
 }
+
 
 
 
@@ -238,10 +253,8 @@
         z-index: 0;
         color: white;
     }
-}
 
-
-.instalationSize {
+    .instalationSize {
     color: white;
     bottom: 70px;
     left: 33%;
@@ -253,7 +266,11 @@
     text-align: center;
     font-weight: bold;
     font-size: 15px;
+    }
 }
+
+
+
 
 @media screen and (max-width:500px) {
     .iframeMudi3D {
@@ -287,9 +304,8 @@
     #btn3DProdId{
         width:60px
     }
-}
 
-.container-options {
+    .container-options {
     bottom: 72px;
     display: flex;
     flex-direction: column;
@@ -301,8 +317,8 @@
     user-select: none;
     width: 90%;
 }
-
-.instalationSize {
+    
+  .instalationSize {
     color: white;
     bottom: 20%;
     left: 26%;
@@ -315,6 +331,14 @@
     font-weight: bold;
     font-size: 15px;
 }
+    
+
+
+}
+
+
+
+
 
 @keyframes shaking {
     0% {
