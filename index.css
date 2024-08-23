@@ -219,6 +219,21 @@
     }
 }
 
+
+.instalationSize {
+    color: white;
+    bottom: 70px;
+    left: 37%;
+    position: fixed;
+    background: #007297;
+    border-radius: inherit;
+    width: 27%;
+    height: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+
 @media screen and (min-width:1100px) and (max-width:1399px) {
 
     .containerQRMudi {
@@ -236,6 +251,21 @@
         z-index: 0;
         color: white;
     }
+}
+
+
+.instalationSize {
+    color: white;
+    bottom: 70px;
+    left: 33%;
+    position: fixed;
+    background: #007297;
+    border-radius: inherit;
+    width: 35%;
+    height: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 @media screen and (max-width:500px) {
@@ -270,6 +300,33 @@
     #btn3DProdId{
         width:60px
     }
+}
+
+.container-options {
+    bottom: 72px;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    justify-content: flex-start;
+    left: 20px;
+    position: absolute;
+    -webkit-user-select: none;
+    user-select: none;
+    width: 90%;
+}
+
+.instalationSize {
+    color: white;
+    bottom: 20%;
+    left: 26%;
+    position: fixed;
+    background: #007297;
+    border-radius: inherit;
+    width: 60%;
+    height: 43px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 @keyframes shaking {
