@@ -46,12 +46,17 @@ function createButon(father,skuNumber){
     container.classList.add(`ContainerBtnsMudi`);
 
         /* We create an informative poster */
-        const 
-        tooltip     = document.createElement('P');
-        tooltip.id  = `tooltipMudi` ;
-        tooltip.classList.add(`mudiTooltip`);
-        tooltip.innerHTML=`<p class="paragraphMudi"><b class="newMudi">¡Nuevo!</b> Descubre como se ve este producto en <b>3D y realidad aumentada</b> en tu espacio</p>`;
-    
+const tooltip = document.createElement('P');
+tooltip.id = `tooltipMudi`;
+tooltip.classList.add(`mudiTooltip`);
+tooltip.innerHTML = `<p class="paragraphMudi">
+  <b class="newMudi">¡Nuevo!</b> Descubre cómo se ve este producto en 
+  <b>3D y realidad aumentada</b> en tu espacio
+</p>`;
+
+// Aplicar display: grid
+tooltip.style.display = "grid";
+
         /** The 3D botton is an image */
         const 
         button3D    = document.createElement('IMG');
