@@ -54,8 +54,6 @@ tooltip.innerHTML = `<p class="paragraphMudi">
   <b>3D y realidad aumentada</b> en tu espacio
 </p>`;
 
-// Aplicar display: grid
-tooltip.style.display = "grid";
 
         /** The 3D botton is an image */
         const 
