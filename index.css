@@ -82,6 +82,9 @@
     background-color: white;
     border-radius: 10px;
     position: relative;
+    display:flex;
+    justify-content:center;
+    aling-items:center
 }
 
 .closeModalMudi {
@@ -185,13 +188,13 @@
 
 .instalationSize {
     color: white;
-    bottom: 70px;
-    left: 37%;
+    top: 70px;
     position: fixed;
     background: #007297;
     border-radius: inherit;
-    width: 25%;
-    height: 25px;
+    width: max-content;
+    height: max-content;
+    padding:10px 0px;
     text-align: center;
     font-weight: bold;
     font-size: 15px;
@@ -380,3 +383,4 @@
 
 
 }
+
