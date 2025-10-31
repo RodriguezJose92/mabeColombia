@@ -194,7 +194,7 @@
     border-radius: inherit;
     width: max-content;
     height: max-content;
-    padding:10px 0px;
+    padding:10px 10px;
     text-align: center;
     font-weight: bold;
     font-size: 15px;
@@ -383,4 +383,5 @@
 
 
 }
+
 
